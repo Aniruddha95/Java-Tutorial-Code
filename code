@@ -767,8 +767,8 @@ public class Main {
 
         //object is an instance of a class that may contain attributes and methods
 
-        car myCar1 = new car();
-        car myCar2 = new car();
+        Car myCar1 = new Car();
+        Car myCar2 = new Car();
 
         System.out.println(myCar1.make);
         System.out.println(myCar1.model);
@@ -782,7 +782,7 @@ public class Main {
     }
 }
 
-class car {
+class Car {
 
     String make = "Chevrolet";
     String model = "Corvette";
