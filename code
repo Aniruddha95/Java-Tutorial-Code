@@ -753,12 +753,50 @@ public class Main {
         System.out.println(x);//here x is changed to 3.0
 
         final double pi = 3.14159;
-        //pi = 4 this cannot be done it will through error
+        //pi = 4 this cannot be done as it will through error
 
         System.out.println(pi);
     }
 }
 
+//objects (OOP)
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //object is an instance of a class that may contain attributes and methods
+
+        car myCar1 = new car();
+        car myCar2 = new car();
+
+        System.out.println(myCar1.make);
+        System.out.println(myCar1.model);
+        System.out.println();
+        System.out.println(myCar2.make);
+        System.out.println(myCar2.model);
+        System.out.println();
+
+        myCar1.drive();
+        myCar1.brake();
+    }
+}
+
+class car {
+
+    String make = "Chevrolet";
+    String model = "Corvette";
+    int year = 2020;
+    String color = "Yellow";
+    double price = 50000.00;
+
+    void drive() {
+        System.out.println("You drive the car");
+    }
+    void brake() {
+        System.out.println("You step on the brakes");
+    }
+}
 
 
 
