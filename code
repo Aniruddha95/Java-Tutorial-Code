@@ -1,0 +1,653 @@
+Java Tutorial Code
+
+//first code
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Hello World");
+        System.out.println("Welcome to Java");
+
+        //This is a comment
+    }
+}
+
+//variables
+
+public class Main {
+
+    public static void main(String[] args) {
+        int x = 123;
+        double y = 3.14;
+        boolean z = true;
+        String name = "BroCode";
+
+        System.out.println(x);
+        System.out.println("My number is : " + x);
+        System.out.println(y);
+        System.out.println(z);
+        System.out.println(name);
+        System.out.println("Hello " + name);
+    }
+}
+
+//swap two variables
+
+public class Main {
+
+    public static void main(String[] args) {
+        String x = "Water";
+        String y = "Kool-Aid";
+        String temp;
+
+        temp = x;
+        x = y;
+        y = temp;
+
+        System.out.println("x: " + x);
+        System.out.println("y: " + y);
+    }
+}
+
+//user input
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What is your name?");
+        String name = scanner.nextLine();
+
+        System.out.println("How old are you?");
+        int age = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("What is your favorite food?");
+        String food = scanner.nextLine();
+
+        System.out.println("Hello " + name);
+        System.out.println("You are " + age + " years old");
+        System.out.println("You Like " + food);
+    }
+}
+
+//expressions
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // expression = operands & operators
+        // operands = values, variables, numbers, quantity
+        // operators = + - * / %
+
+        int friends = 10;
+
+        //friends = friends + 1;
+        friends++;
+
+        System.out.println(friends);
+    }
+}
+
+//GUI intro
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String name = JOptionPane.showInputDialog("Enter your name");
+        JOptionPane.showMessageDialog(null, "Hello " + name);
+
+        int age = Integer.parseInt(JOptionPane.showInputDialog("Enter your age"));
+        JOptionPane.showMessageDialog(null, "You are " + age + " years old");
+
+        double height = Double.parseDouble(JOptionPane.showInputDialog("Enter your height"));
+        JOptionPane.showMessageDialog(null, "You are " + height + " cm tall");
+    }
+}
+
+//math class
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        double a = 3.14;
+        double b = -10.33;
+
+        double c = Math.max(a, b);
+        double d = Math.abs(b);
+        double e = Math.round(a);
+        double f = Math.ceil(a);
+        double g = Math.floor(a);
+        System.out.println("Max num is: " + c);
+        System.out.println("Abs value is: " + d);
+        System.out.println("Round num is: " + e);
+        System.out.println("Ceil num is: " + f);
+        System.out.println("floor num is: " + g);
+
+        double x;
+        double y;
+        double z;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter side x: ");
+        x = scanner.nextDouble();
+        System.out.println("Enter side y: ");
+        y = scanner.nextDouble();
+
+        z = Math.sqrt((x * x) + (y * y));
+
+        System.out.println("The hypotenuse is: " + z);
+
+        scanner.close();
+    }
+}
+
+//random numbers
+
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Random random = new Random();
+
+        int x = random.nextInt();
+        int y = random.nextInt(6) + 1;//Dice roll
+        double z = random.nextDouble();//value in 0-1
+        boolean a = random.nextBoolean();
+
+        System.out.println(x);
+        System.out.println(y);
+        System.out.println(z);
+        System.out.println(a);
+
+    }
+}
+
+//if statements
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //if statement = performs a block of code if it's condition evaluates to be true
+
+        int age = 13;
+
+        if (age >= 75) {
+            System.out.println("Ok Boomer!");//if(age == 75) not if(age = 75)
+        }
+        else if (age >= 18) {
+            System.out.println("You are an adult!");
+        }
+        else if (age >= 13) {
+            System.out.println("You are a teenager!");
+        }
+        else {
+            System.out.println("You are not an adult!");
+        }
+    }
+}
+
+//switches
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // switch = statement that allows a variable to be tested for equality against a list of values
+
+        String day = "Friday"; // case sensitive
+
+        switch (day) {
+            case "Monday":
+                System.out.println("It is Monday!");
+                break;
+
+            case "Tuesday":
+                System.out.println("It is Tuesday!");
+                break;
+
+            case "Wednesday":
+                System.out.println("It is Wednesday!");
+                break;
+
+            case "Thursday":
+                System.out.println("It is Thursday!");
+                break;
+
+            case "Friday":
+                System.out.println("It is Friday!");
+                break;
+
+            case "Saturday":
+                System.out.println("It is Saturday!");
+                break;
+
+            default:
+                System.out.println("That is not a day!");
+        }
+    }
+}
+
+//logical operators
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //logical operators = used to connect two or more expressions
+        //               && = And : both conditions must be true
+        //               || = Or : either condition must be true
+        //                ! = Not : reverses boolean value of the condition
+
+        int temp = 25;
+
+        if (temp > 30) {
+            System.out.println("It is hot outside!");
+        }
+        else if (temp >= 20 && temp <= 30) {
+            System.out.println("It is warm outside!");
+        }
+        else {
+            System.out.println("It is cold outside!");
+        }
+
+        // another question
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("You are playing a game! Press q or Q to quit");
+        String response = scanner.next();
+
+        if (response.equals("q") || response.equals("Q")) {
+            System.out.println("You quit the game");
+        }
+        else {
+            System.out.println("You are still playing the game");
+        }
+    }
+}
+
+//while loop
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //while loop executes a block of code as long as it's condition remains true
+
+        Scanner scanner = new Scanner(System.in);
+        String name = "";
+
+        while(name.isBlank()) {
+            System.out.println("Enter your name : ");
+            name = scanner.nextLine();
+        }
+
+        System.out.println("Hello " + name);
+    }
+}
+
+//for loop
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // for loop executes a block of code a limited amount of time
+
+        for (int i = 10; i >= 0; i--) {
+            System.out.println(i);
+            //i-- for one i-=2 for two
+            //can write i-- in loop below System.out.println(i); rather than above
+        }
+        System.out.println("Happy New Year!");
+    }
+}
+
+//nested loops
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //nested loops means loops inside loops
+
+        Scanner scanner = new Scanner(System.in);
+        int rows;
+        int columns;
+        String symbol = "";
+
+        System.out.println("Enter # of rows : ");
+        rows = scanner.nextInt();
+        System.out.println("Enter # of columns : ");
+        columns = scanner.nextInt();
+        System.out.println("Enter symbol to use : ");
+        symbol = scanner.next();
+
+        for(int i=1; i<=rows; i++) {
+            System.out.println();
+            for(int j=1; j<=columns; j++) {
+                System.out.print(symbol);
+            }
+        }
+    }
+}
+
+//arrays
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // array used to store multiple values in single variable
+
+        String[] cars = {"Camaro", "Corvette", "Tesla"};
+        System.out.println(cars[1]);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // array used to store multiple values in single variable
+
+        String[] cars = new String[3];
+
+        cars[0] = "Camaro";
+        cars[1] = "Corvette";
+        cars[2] = "Tesla";
+
+        for (int i=0; i<cars.length; i++) {
+            System.out.println(cars[i]);
+        }
+    }
+}
+
+//2D arrays
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //2D arrays are arrays of arrays
+
+        String[][] cars = {
+                {"Camaro", "Corvette", "Silverdo"},
+                {"Mustang", "Ranger", "F-150"},
+                {"Ferrari", "Lambo", "Tesla"}
+        };
+
+        for(int i=0; i<cars.length; i++) {
+            System.out.println();
+            for(int j=0; j<cars[i].length; j++) {
+                System.out.print(cars[i][j] + " ");
+            }
+        }
+    }
+}
+
+//string methods
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String name = "Aniruddha";
+
+        boolean result1 = name.equalsIgnoreCase("aniruddha");
+        int result2 = name.length();
+        char result3 = name.charAt(1);
+        int result4 = name.indexOf("a");
+        boolean result5 = name.isEmpty();
+        String result6 = name.toUpperCase();
+        String result7 = name.toLowerCase();
+        String result8 = name.trim();
+        String result9 = name.replace("d", "z");
+
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
+        System.out.println(result4);
+        System.out.println(result5);
+        System.out.println(result6);
+        System.out.println(result7);
+        System.out.println(result8);
+        System.out.println(result9);
+    }
+}
+
+//wrapper classes
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //wrapper class provides a way to use primitive data types as reference data types
+        //reference data types contains useful methods
+        //autoboxing = the automatic conversion that Java compiler makes between the primitive data types and their corresponding object wrapper class
+        //unboxing = the reverse of autoboxing, automatic conversion of wrapper class to primitive
+
+        Boolean a = true;
+        Character b = '@';
+        Integer c = 123;
+        Double d = 3.14;
+        String e = "Aniruddha";
+
+        if(a==true) {
+            System.out.println("This is true");
+        }
+    }
+}
+
+//array list
+
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //ArrayList is a resizable array
+        //Elements can be added or removed after compilation phase
+        //Store reference data types
+
+        ArrayList<String> food = new ArrayList<String>();
+
+        food.add("pizza");
+        food.add("hamburger");
+        food.add("hotdog");
+
+        food.set(0, "vadapav");
+        food.remove(2);
+        food.clear();
+
+        for(int i=0; i<food.size(); i++) {
+            System.out.println(food.get(i));
+        }
+    }
+}
+
+//2D array list
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //2D arraylist is a dynamic list of lists
+        //You can change the size of these lists during runtime
+
+        ArrayList<ArrayList<String>> groceryList = new ArrayList<ArrayList<String>>();
+
+        ArrayList<String> bakeryList = new ArrayList<>();
+        bakeryList.add("pasta");
+        bakeryList.add("garlic bread");
+        bakeryList.add("donuts");
+
+        ArrayList<String> produceList = new ArrayList<>();
+        produceList.add("tomatoes");
+        produceList.add("zucchini");
+        produceList.add("peppers");
+
+        ArrayList<String> drinksList = new ArrayList<>();
+        drinksList.add("soda");
+        drinksList.add("coffee");
+
+        groceryList.add(bakeryList);
+        groceryList.add(produceList);
+        groceryList.add(drinksList);
+
+        System.out.println(groceryList);
+        System.out.println(groceryList.get(0));
+        System.out.println(groceryList.get(0).get(0));
+        System.out.println(groceryList.get(2).get(1));
+    }
+}
+
+//for each loop
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String[] animals = {"cat", "dog", "rat", "bird"};
+
+        for(String i : animals) {
+            System.out.println(i);
+        }
+    }
+}
+
+//for each loop
+
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> animals = new ArrayList<String>();
+
+        animals.add("cat");
+        animals.add("dog");
+        animals.add("rat");
+        animals.add("bird");
+
+        for(String i : animals) {
+            System.out.println(i);
+        }
+    }
+}
+
+//Array vs ArrayList
+//Array is built in feature while ArrayList is class in java.util package
+//Arrays are fixed in size and cannot grow or shrink while ArrayLists are dynamic and can automatically resize using methods like add() or remove()
+//Arrays can store primitive data types and objects while ArrayLists can store only objects (using autoboxing)
+//Arrays are faster while ArraysLists are slightly overhead
+
+
+//methods
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //method is a block of code that is executed whenever it is called upon
+        hello();
+    }
+
+    static void hello() {
+        System.out.println("Hello World");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        hello(2);
+    }
+
+    static void hello(int x) {
+        System.out.println(x*x);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String name = "Aniruddha";
+        hello(name);
+    }
+
+    static void hello(String x) {
+        System.out.println("Hello " + x);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String name = "Aniruddha";
+        int age = 30;
+        hello(name,age);
+    }
+
+    static void hello(String x, int y) {
+        System.out.println("Hello " + x);
+        System.out.println("You are " + y +" years old");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int x = 3;
+        int y = 4;
+
+        //int z = add(x,y);
+        //System.out.println(z);
+
+        System.out.println(add(x,y));
+    }
+
+    static int add(int x, int y) {
+
+        int z = x + y;
+        return z;
+        //return x + y;
+    }
+}
+
+
+
+
+
+
