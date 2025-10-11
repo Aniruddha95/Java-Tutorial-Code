@@ -838,3 +838,35 @@ class Human {
     }
 }
 
+//variable scope
+
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //local variables are declared inside the method and are visible only to that method
+        //global variables are declared outside the method, but within the class and are visible to all parts of the class
+
+        DiceRoller diceroller = new DiceRoller();
+    }
+}
+
+class DiceRoller {
+
+    Random random;
+    int num;
+
+    DiceRoller() {
+        random = new Random();
+        roll();
+    }
+
+    void roll() {
+        num = random.nextInt(6)+1;
+        System.out.println(num);
+    }
+}
+
+
