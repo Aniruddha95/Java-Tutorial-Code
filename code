@@ -798,5 +798,43 @@ class Car {
     }
 }
 
+//constructors
 
+public class Main {
+
+    public static void main(String[] args) {
+
+        //constructor is a special method that is called when an object is created
+
+        Human human1 = new Human("Rick", 40, 80);
+        Human human2 = new Human("Morty", 35, 75);
+
+        System.out.println(human1.name);
+        System.out.println(human2.age);
+
+        human2.eat();
+        human1.drink();
+    }
+}
+
+class Human {
+
+    String name;
+    int age;
+    double weight;
+
+    Human(String name, int age, double weight) {
+
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
+
+    void eat() {
+        System.out.println(this.name + " is eating");
+    }
+    void drink() {
+        System.out.println(this.name + " is drinking");
+    }
+}
 
