@@ -739,6 +739,25 @@ public class Main {
     }
 }
 
+//final keyword
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //anything that is declared as final cannot be changed or updated
+
+        double x = 1.234;
+        x = 3;
+
+        System.out.println(x);//here x is changed to 3.0
+
+        final double pi = 3.14159;
+        //pi = 4 this cannot be done it will through error
+
+        System.out.println(pi);
+    }
+}
 
 
 
