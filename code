@@ -939,3 +939,32 @@ class Pizza {
         this.topping = topping;
     }
 }
+
+//toString method
+
+public class Main {
+
+    public static void main() {
+
+        //toString is a special method that all objects inherit, that returns a string that "textually represents" as object
+        //can be used both implicitly and explicitly
+
+        Car car = new Car();
+        System.out.println(car.toString());//explicitly
+        System.out.println(car);//implicitly
+    }
+}
+
+class Car {
+
+    String make = "Ford";
+    String model = "Mustang";
+    String color = "Red";
+    int year = 2021;
+
+    public String toString() {
+
+        String myString = make +"\n"+ model +"\n"+ color +"\n"+ year;
+        return myString;
+    }
+}
