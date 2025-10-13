@@ -1285,3 +1285,138 @@ public class Asub extends A{
         System.out.println(c.protectedMessage);
     }
 }
+
+//encapsulation
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //encapsulation means hiding the attributes of a class or making them private
+        //can be accessed through methods (getters or setters)
+        //you should make attributes private if you don't have any reason to make them public or protected
+
+        Car car = new Car("Chevrolet", "Corvette", 2021);
+
+        System.out.println(car.getMake());
+        System.out.println(car.getModel());
+        System.out.println(car.getYear());
+
+        car.setYear(2022);
+        System.out.println(car.getYear());
+    }
+}
+
+class Car {
+
+    private String make;
+    private String model;
+    private int year;
+
+    Car(String make, String model, int year) {
+
+        this.setMake(make);
+        this.setModel(model);
+        this.setYear(year);
+    }
+
+    public String getMake() {
+        return make;
+    }
+    public String getModel() {
+        return model;
+    }
+    public int getYear() {
+        return year;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+    public void setModel(String model) {
+        this.model = model;
+    }
+    public void setYear(int year) {
+        this.year = year;
+    }
+}
+
+//copy objects
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Car car1 = new Car("Chevrolet", "Camaro", 2021);
+        Car car2 = new Car("Ford", "Mustang", 2022);
+
+        Car car3 = new Car(car2);
+
+        System.out.println(car1);
+        System.out.println(car2);
+        System.out.println();
+        System.out.println(car1.getMake());
+        System.out.println(car1.getModel());
+        System.out.println(car1.getYear());
+        System.out.println();
+        System.out.println(car2.getMake());
+        System.out.println(car2.getModel());
+        System.out.println(car2.getYear());
+        System.out.println();
+
+        car2.copy(car1);
+
+        System.out.println(car2.getMake());
+        System.out.println(car2.getModel());
+        System.out.println(car2.getYear());
+        System.out.println();
+        System.out.println(car3.getMake());
+        System.out.println(car3.getModel());
+        System.out.println(car3.getYear());
+        System.out.println();
+    }
+}
+
+class Car {
+
+    private String make;
+    private String model;
+    private int year;
+
+    Car(String make, String model, int year) {
+
+        this.setMake(make);
+        this.setModel(model);
+        this.setYear(year);
+    }
+
+    Car(Car y) {
+        this.copy(y);
+    }
+
+    public String getMake() {
+        return make;
+    }
+    public String getModel() {
+        return model;
+    }
+    public int getYear() {
+        return year;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+    public void setModel(String model) {
+        this.model = model;
+    }
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void copy(Car x) {
+        this.setMake(x.getMake());
+        this.setModel(x.getModel());
+        this.setYear(x.getYear());
+    }
+}
