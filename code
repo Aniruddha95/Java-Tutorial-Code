@@ -1228,3 +1228,60 @@ class Car extends Vehicle {
         System.out.println("The driver is driving the car");
     }
 }
+
+//access modifiers
+
+package package1;
+import package2.*;
+
+public class A {
+
+    //no access modifier or default modifier can be accessed by other class but in same package
+    //public modifier can be accessed by everyone
+    //protected modifier can be accessed within class and subclass whose parent is in another package
+    //private modifier is only accessible in same class not even other class from same package
+
+    protected String protectedMessage = "This is protected";
+
+    public static void main(String[] args) {
+
+        C c = new C();
+
+        System.out.println(c.publicMessage);
+    }
+}
+
+package package1;
+import package2.*;
+
+public class B {
+
+    private String privateMessage = "This is private";
+}
+
+package package2;
+import package1.*;
+
+public class C {
+
+    String defaultMessage = "This is default";
+    protected String protectedMessage = "This is protected";
+    public String publicMessage = "This is public";
+
+}
+
+package package2;
+import package1.*;
+
+public class Asub extends A{
+
+    public static void main(String[] args) {
+
+        C c = new C();
+        Asub asub = new Asub();
+
+        System.out.println(c.defaultMessage);
+        System.out.println(asub.protectedMessage);
+        System.out.println(c.protectedMessage);
+    }
+}
