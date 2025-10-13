@@ -1476,3 +1476,109 @@ interface Predator {
 
     void hunt();
 }
+
+//polymorphism
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //polymorphism means many form
+        //The ability of an object to identify as more than one type
+
+        Car car = new Car();
+        Bicycle bicycle = new Bicycle();
+        Boat boat = new Boat();
+
+        Vehicle[] racers = {car, bicycle, boat};
+
+        //car.go();
+        //bicycle.go();
+        //boat.go();
+
+        for(Vehicle x : racers) {
+            x.go();
+        }
+    }
+}
+
+class Vehicle {
+
+    public void go() {
+        
+    }
+}
+
+class Car extends Vehicle{
+
+    public void go() {
+        System.out.println("The car begins to move");
+    }
+}
+
+class Bicycle extends Vehicle {
+
+    public void go() {
+        System.out.println("The bicycle begins to move");
+    }
+}
+
+class Boat extends Vehicle {
+
+    public void go() {
+        System.out.println("The boat begins to move");
+    }
+}
+
+//dynamic polymorphism
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        Animal animal;
+
+        System.out.println("What animal do you want?");
+        System.out.println("Dog = 1 or Cat = 2 :");
+        int choice = scanner.nextInt();
+
+        if(choice==1) {
+            animal = new Dog();
+            animal.speak();
+        }
+        else if(choice==2) {
+            animal = new Cat();
+            animal.speak();
+        }
+        else {
+            animal = new Animal();
+            System.out.println("That choice was invalid");
+            animal.speak();
+        }
+    }
+}
+
+class Animal {
+
+    public void speak() {
+        System.out.println("Animal goes brr");
+    }
+}
+
+class Dog extends Animal {
+
+    public void speak() {
+        System.out.println("Dog goes bark");
+    }
+}
+
+class Cat extends Animal {
+
+    public void speak() {
+        System.out.println("Cat goes meow");
+    }
+}
+
