@@ -1390,8 +1390,8 @@ class Car {
         this.setYear(year);
     }
 
-    Car(Car y) {
-        this.copy(y);
+    Car(Car x) {
+        this.copy(x);
     }
 
     public String getMake() {
@@ -1419,4 +1419,60 @@ class Car {
         this.setModel(x.getModel());
         this.setYear(x.getYear());
     }
+}
+
+//interface
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //interface is a template that can be applied to a class
+        //similar to inheritance but specifies what a class has/must do
+        //classes can apply more than one interface whereas inheritance is limited to one super class
+
+        Rabbit rabbit = new Rabbit();
+        rabbit.flee();
+
+        Hawk hawk = new Hawk();
+        hawk.hunt();
+
+        Fish fish = new Fish();
+        fish.flee();
+        fish.hunt();
+    }
+}
+
+class Rabbit implements Prey {
+
+    public void flee() {
+        System.out.println("The rabbit is fleeing");
+    }
+}
+
+class Hawk implements Predator {
+
+    public void hunt() {
+        System.out.println("The hawk is hunting");
+    }
+}
+
+class Fish implements Prey, Predator {
+
+    public void flee() {
+        System.out.println("This fish is fleeing from a larger fish");
+    }
+    public void hunt() {
+        System.out.println("This fish is hunting smaller fish");
+    }
+}
+
+interface Prey {
+
+    void flee();
+}
+
+interface Predator {
+
+    void hunt();
 }
