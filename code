@@ -1619,3 +1619,96 @@ public class Main {
         }
     }
 }
+
+//file class
+
+import java.io.File;
+
+public class Main {
+
+    public static void main(String[] arg) {
+
+        //file is an abstract representation of file and directory pathname
+
+        File file = new File("secret_message.rtf");
+        File file1 = new File("/Users/aniruddhathakare/Downloads/another_file.rtf");
+
+        if(file.exists()) {
+            System.out.println("That file exists");
+            System.out.println(file.getPath());
+            System.out.println(file.getAbsolutePath());
+            System.out.println(file.isFile());
+            file.delete();
+        }
+        else {
+            System.out.println("That file doesn't exists");
+        }
+
+        if(file1.exists()) {
+            System.out.println("That file exists");
+            System.out.println(file1.getPath());
+            System.out.println(file1.getAbsolutePath());
+            System.out.println(file1.isFile());
+            file1.delete();
+        }
+        else {
+            System.out.println("That file doesn't exists");
+        }
+    }
+}
+
+//fileWriter (write to a file)
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        try {
+            FileWriter writer = new FileWriter("poem.rtf");
+            writer.write("Roses are red \nViolets are blue\nJava Java Java \nRocking everywhere");
+            writer.append("\n(A poem by Aniruddha)");
+            writer.close();
+        }
+        catch(IOException e) {
+
+            e.printStackTrace();
+        }
+    }
+}
+
+//fileReader (read a file)
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //fileReader = read the contents of a file as a stream of characters
+        //one by one read() returns an int value which contains the byte value when read() returns -1 there is no data to read
+
+        try {
+
+            FileReader reader = new FileReader("art.rtf");
+            int data = reader.read();
+            while(data != -1) {
+                System.out.print((char)data);
+                data = reader.read();
+            }
+            reader.close();;
+        }
+        catch (FileNotFoundException e) {
+
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+
+            e.printStackTrace();
+        }
+    }
+}
