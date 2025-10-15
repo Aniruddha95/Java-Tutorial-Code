@@ -272,7 +272,9 @@ public class Main {
             System.out.println("It is cold outside!");
         }
 
-        // another question
+        //another question
+        //when we take response as input we declare new objects everytime so if we use == then we are comparing objects which are different
+        //but if we define String response = "Q" then == will work fine as it will use string literals
 
         Scanner scanner = new Scanner(System.in);
 
