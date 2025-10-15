@@ -312,6 +312,21 @@ public class Main {
     }
 }
 
+public class Main {
+
+    public static void main(String[] args) {
+
+        int i = 1;
+
+        while(i<=5) {
+            System.out.println("Count : "+i);
+            i++;
+        }
+
+        System.out.println("Done");
+    }
+}
+
 //for loop
 
 public class Main {
