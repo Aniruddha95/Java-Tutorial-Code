@@ -1776,3 +1776,50 @@ public class Main {
         System.out.println("Bye...!!!");
     }
 }
+
+//generics
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //generics enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods
+        //a benefit is to eliminate the need to create multiple versions of methods are classes for various data types
+        //use one version for all reference data types
+
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        Double[] doubleArray = {5.5, 4.4, 3.3, 2.2, 1.1};
+        Character[] charArray = {'H','E', 'L', 'L', 'O'};
+        String[] strArray = {"B", "Y", "E"};
+
+        displayArray(intArray);
+        displayArray(doubleArray);
+        displayArray(charArray);
+        displayArray(strArray);
+    }
+
+    public static void displayArray(Integer[] array) {
+        for(Integer i : array) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+    public static void displayArray(Double[] array) {
+        for(Double i : array) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+    public static void displayArray(Character[] array) {
+        for(Character i : array) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+    public static void displayArray(String[] array) {
+        for(String i : array) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+}
