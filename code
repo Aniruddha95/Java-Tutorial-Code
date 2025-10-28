@@ -2035,4 +2035,119 @@ public class MyGenericClass <Thing,Thing2 extends Number> {
     }
 }
 
+//serialization
+//Main.java
 
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        //serialization = the process of converting an object into a byte stream
+        //saves the state of the object after program exits
+        //this byte stream can be saved as a file or sent over a network
+        //can be sent to a different machine
+        //byte stream can be saved as a file (.ser) which is platform independent
+        //think of this as if you are saving a file with the object's information
+
+        //deserialization = the reverse process of converting a byte stream into as object
+        //think of this as if you are loading a saved file
+
+        //steps to serialize :
+        //your object class should implement serializable interface
+        //add import java.io.Serializable
+        //FileOutputStream fileOut = new FileOutputStream(file path)
+        //ObjectOutputStream out = new ObjectOutputStream(fileOut)
+        //out.writeObject(objectName)
+        //out.close(); fileout.close();
+
+        User user = new User();
+
+        user.name = "Aniruddha";
+        user.password = "ILovePizza";
+
+        FileOutputStream fileOut = new FileOutputStream("UserInfo.ser");
+        ObjectOutputStream out = new ObjectOutputStream(fileOut);
+        out.writeObject(user);
+        out.close();
+        fileOut.close();
+
+        System.out.println("Object info saved!");
+    }
+}
+
+//User.java
+
+import java.io.*;
+
+public class User implements Serializable {
+
+    String name;
+    String password;
+
+    public void sayHello() {
+        System.out.println("Hello "+name);
+    }
+}
+
+//deserialization
+//Main.java
+
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
+        //steps to deserialize :
+        //declare your objects (don't instantiate)
+        //your class should implement serializable interface
+        //add import.java.Serializable
+        //FileInputStream fileIn = new FileInputStream(file path)
+        //ObjectInputStream in = new ObjectInputStream(fileIn)
+        //objectName = (Class) in.readObject()
+        //in.close(); fileIn.close();
+
+        User user = null;
+
+        FileInputStream fileIn = new FileInputStream("/Users/aniruddhathakare/IdeaProjects/Serializer/UserInfo.ser");
+        ObjectInputStream in = new ObjectInputStream(fileIn);
+        user = (User) in.readObject();
+        in.close();
+        fileIn.close();
+
+        System.out.println(user.name);
+        System.out.println(user.password);
+        user.sayHello();
+    }
+}
+
+//User.java
+
+import java.io.*;
+
+public class User implements Serializable {
+
+    String name;
+    String password;
+
+    public void sayHello() {
+        System.out.println("Hello "+name);
+    }
+}
+
+//transient & serialVersionUID
+
+//children classes of a parent class that implements Serializable will do so as well
+//static fields are not serialized (they belong to the class, not an individual object)
+//the class's definition ("class file") itself is not recorded, cast it as the object type
+//fields declared as "transient" aren't serialized, they're ignored
+//serialVersion UID is a unique version ID
+
+//serialVersionUID is a unique ID that functions like a version #
+//verifies that the sender and receiver of a serialized object, have loaded classes for that object that match
+//Ensure object will be compatible between machines
+//numbers must match otherwise this will cause a InvalidClassException
+//a serialVersionUID will be calculated based on class properties, members, etc.
+//a serializable class can declare its own serialVersionUID explicitly (recommended)
