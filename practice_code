@@ -1,1 +1,116 @@
+public class Main {
 
+    public static void main(String[] args) {
+
+        //This is my first java program
+
+        System.out.print("I like pizza!\n");
+        System.out.println("It's really good");
+        System.out.println("Buy me one");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //Homework
+
+        System.out.println("It's winter season");
+        System.out.println("Still raining heavily");
+        System.out.println("What's going on");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int age = 30;
+        int year = 2025;
+
+        double gpa = 3.5;
+        double price = 19.99;
+        double temperature = -5;
+
+        char grade = 'A';
+
+        boolean isStudent = true;
+        boolean forSale = false;
+
+        String name = "Aniruddha";
+        String car = "Mustang";
+
+        System.out.println(age);
+        System.out.println("The year is "+year);
+        System.out.println(gpa);
+        System.out.println("$"+price);
+        System.out.println(temperature);
+        System.out.println(grade);
+        System.out.println(isStudent);
+        System.out.println(forSale);
+
+        if(!isStudent) {
+            System.out.println("I am a student");
+        }else{
+            System.out.println("I am not a student");
+        }
+
+        System.out.println(name);
+        System.out.println("Hello "+name);
+        System.out.println("My favourite car is "+car);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //Homework
+
+        String name = "Java";
+        int gta = 6;
+        double pi = 3.14;
+        char gender = 'M';
+        boolean isAdmin = true;
+
+        System.out.println(name);
+        System.out.println(gta);
+        System.out.println(pi);
+        System.out.println(gender);
+        System.out.println(isAdmin);
+    }
+}
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name : ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter your age : ");
+        int age = scanner.nextInt();
+
+        System.out.print("What is your gpa : ");
+        double gpa = scanner.nextDouble();
+
+        System.out.print("Are you a student? (true/false) : ");
+        boolean isStudent = scanner.nextBoolean();
+
+        System.out.println("Hello "+name+", you are "+age+" years old");
+        System.out.println("Your gpa is "+gpa);
+
+        if(isStudent) {
+            System.out.println("You are a student");
+        }else{
+            System.out.println("You are not a student");
+        }
+
+        scanner.close();
+    }
+}
