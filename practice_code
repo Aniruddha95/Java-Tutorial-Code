@@ -175,6 +175,28 @@ public class Main {
     }
 }
 
+public class Main {
+
+    public static void main(String[] args) {
+
+        int x = 10;
+        int y = 3;
+        int z;
+
+        z = x + y; //z = x - y; z = x * y; z = x / y; z = x % y;
+
+        x = x + y; //x += y; x -= y;
+
+        y = y + 1; //y++; y--; y += 2; y -= 2;
+
+        double result = 3 + 4 * (7 - 5) / 2.0;
+
+        System.out.println(z);
+        System.out.println(x);
+        System.out.println(y);
+        System.out.println(result);
+    }
+}
 
 
 
