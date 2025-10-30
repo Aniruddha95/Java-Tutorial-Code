@@ -114,3 +114,27 @@ public class Main {
         scanner.close();
     }
 }
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //Homework : Calculate area of rectangle
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter side A : ");
+        double A = scanner.nextDouble();
+        System.out.print("Enter side B : ");
+        double B = scanner.nextDouble();
+
+        double Area = A*B;
+        System.out.println("Area of rectangle is : "+Area);
+
+        scanner.close();
+    }
+}
+
+
