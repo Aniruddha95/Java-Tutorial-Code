@@ -486,7 +486,7 @@ public class Main {
 
         System.out.print("Are you a student? (true/false) : ");
         isStudent = scanner.nextBoolean();
-        System.out.print("What you above 65 years old? (true/false) : ");
+        System.out.print("Are you above 65 years old? (true/false) : ");
         isSenior = scanner.nextBoolean();
 
         if(isStudent) {
