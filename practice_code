@@ -468,3 +468,49 @@ public class Main {
     }
 }
 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        boolean isStudent;
+        boolean isSenior;
+        double price = 9.99;
+
+        //condition 1 : if student then 10% discount
+        //condition 2 : if senior above 65years the 20% discount
+        //condition 3 : if both senior and student then 30% discount
+        //condition 4 : if not both then no discount
+
+        System.out.print("Are you a student? (true/false) : ");
+        isStudent = scanner.nextBoolean();
+        System.out.print("What you above 65 years old? (true/false) : ");
+        isSenior = scanner.nextBoolean();
+
+        if(isStudent) {
+            if(isSenior) {
+                System.out.println("You get 10% student discount");
+                System.out.println("You get 20% senior discount");
+                price = 0.7 * price;
+            }
+            else {
+                System.out.println("You get 10% student discount");
+                price = 0.9 * price;
+            }
+        }
+        else {
+            if(isSenior) {
+                System.out.println("You get 20% senior discount");
+                price = 0.8 * price;
+            }
+            else {
+                System.out.println("You don't have any discount");
+            }
+        }
+        System.out.printf("Your ticket price is $%.2f", price);
+
+        scanner.close();
+    }
+}
