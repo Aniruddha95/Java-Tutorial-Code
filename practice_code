@@ -1,5 +1,4 @@
 public class Main {
-
     public static void main(String[] args) {
 
         //This is my first java program
@@ -11,7 +10,6 @@ public class Main {
 }
 
 public class Main {
-
     public static void main(String[] args) {
 
         //Homework
@@ -23,7 +21,6 @@ public class Main {
 }
 
 public class Main {
-
     public static void main(String[] args) {
 
         int age = 30;
@@ -63,7 +60,6 @@ public class Main {
 }
 
 public class Main {
-
     public static void main(String[] args) {
 
         //Homework
@@ -85,7 +81,6 @@ public class Main {
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -118,7 +113,6 @@ public class Main {
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
 
         //Homework : Calculate area of rectangle
@@ -140,7 +134,6 @@ public class Main {
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
 
         //Mad Libs Game
@@ -176,7 +169,6 @@ public class Main {
 }
 
 public class Main {
-
     public static void main(String[] args) {
 
         int x = 10;
@@ -201,7 +193,6 @@ public class Main {
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
 
         //Shopping cart program
@@ -229,5 +220,70 @@ public class Main {
         scanner.close();
     }
 }
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        //Domino's cart program
+
+        Scanner scanner = new Scanner(System.in);
+
+        scanner.close();
+    }
+}
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        String name;
+        int age;
+        boolean isStudent;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name : ");
+        name = scanner.nextLine();
+        System.out.print("Enter your age : ");
+        age = scanner.nextInt();
+        System.out.print("Are you a student? (true/false) : ");
+        isStudent = scanner.nextBoolean();
+
+        //name conditions
+        if(name.isEmpty()) {
+            System.out.println("You didn't enter your name");
+        }
+        else {
+            System.out.println("Hello "+name);
+        }
+
+        //age conditions
+        if(age>=60) {
+            System.out.println("You are on deathbed");
+        }
+        else if(age>=18) {
+            System.out.println("You are an adult");
+        }
+        else if(age>=13) {
+            System.out.println("You are a teenager");
+        }
+        else {
+            System.out.println("You are a kid");
+        }
+
+        //isStudent conditions
+        if(isStudent) {
+            System.out.println("You are a student");
+        }
+        else {
+            System.out.println("You are not a student");
+        }
+
+        scanner.close();
+    }
+}
+
 
 
