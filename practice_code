@@ -285,5 +285,74 @@ public class Main {
     }
 }
 
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Random random = new Random();
+
+        int num1;
+        int num2;
+        double num3;
+        boolean isHead;
+
+        num1 = random.nextInt(6); //random number between 0-5
+        //num1 = random.nextInt(6) + 1; dice roll
+        num2 = random.nextInt(1,6); //random number between 1-5. 1 inclusive and 6 exclusive
+        num3 = random.nextDouble();
+
+        isHead = random.nextBoolean();
+
+        System.out.println(num1);
+        System.out.println(num2);
+        System.out.println(num3);
+
+        if(isHead) {
+            System.out.println("It is Head");
+        }
+        else {
+            System.out.println("It is Tail");
+        }
+    }
+}
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+
+        //Roulette Wheel
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int num;
+        int bet;
+        int rand_num;
+        int winning;
+
+        System.out.print("Enter your number : ");
+        num = scanner.nextInt();
+        System.out.print("Enter your bet : ");
+        bet = scanner.nextInt();
+
+        rand_num = random.nextInt(36) + 1;
+
+        if(num>36 || num<0) {
+            System.out.println("Enter number between 0 to 36");
+        }
+        else if(num == rand_num) {
+            winning = 10 * bet;
+            System.out.println("Congratulations!! You have won $"+winning);
+        }
+        else {
+            System.out.println("Better luck next time!!");
+        }
+
+        scanner.close();
+    }
+}
 
 
