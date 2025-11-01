@@ -514,3 +514,57 @@ public class Main {
         scanner.close();
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+
+        String name = "CaptainCode";
+        String longName = "    Example     ";
+
+        int length = name.length();
+        int index = name.indexOf("t");
+        int lastIndex = name.lastIndexOf("a");
+        char letter = name.charAt(2);
+        boolean compare1 = name.equals("captaincode");
+        boolean compare2 = name.equalsIgnoreCase("captaincode");
+        String upper = name.toUpperCase();
+        String lower = name.toLowerCase();
+        String replace = name.replace("a", "z");
+        String trimName = longName.trim();
+        boolean isEmpty = name.isEmpty();
+
+        System.out.println(length);
+        System.out.println(index);
+        System.out.println(lastIndex);
+        System.out.println(letter);
+        System.out.println(compare1);
+        System.out.println(compare2);
+        System.out.println(upper);
+        System.out.println(lower);
+        System.out.println(replace);
+        System.out.println(longName);
+        System.out.println(trimName);
+        System.out.println(isEmpty);
+
+        if(name.isEmpty()) {
+            System.out.println("Your string is empty");
+        }
+        else {
+            System.out.println("Hello "+name);
+        }
+
+        if(name.contains("a")) {
+            System.out.println("Your name contains 'a'");
+        }
+        else {
+            System.out.println("Your name doesn't have 'a'");
+        }
+
+        if(name.equals("password")) {
+            System.out.println("Your name cannot be password");
+        }
+        else {
+            System.out.println("Hello "+name);
+        }
+    }
+}
