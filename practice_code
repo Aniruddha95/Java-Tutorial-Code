@@ -1132,7 +1132,92 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //number guessing game
+        //number guessing game - do while loop without attempts
+
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        int guess;
+        int attempts = 0;
+        int randomNum;
+
+        randomNum = random.nextInt(10) + 1;
+
+        System.out.println("Number Guessing Game");
+
+        do {
+            System.out.print("Enter your guess : ");
+            guess = scanner.nextInt();
+            attempts ++;
+
+            if(guess < randomNum) {
+                System.out.println("Your guess is Too Low");
+            }
+            else if(guess > randomNum) {
+                System.out.println("Your guess is Too High");
+            }
+            else {
+                System.out.printf("You have guessed right in %d attempts", attempts);
+            }
+        }while(guess != randomNum);
+
+        scanner.close();
+    }
+}
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        //number guessing game - do while loop with attempts
+
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        int guess;
+        int attempts = 0;
+        int randomNum;
+        boolean hasGuessedCorrectly = false;
+
+        randomNum = random.nextInt(10) + 1;
+
+        System.out.println("Number Guessing Game");
+
+        do {
+            System.out.print("Enter your guess : ");
+            guess = scanner.nextInt();
+            attempts ++;
+
+            if(guess < randomNum) {
+                System.out.println("Your guess is Too Low");
+            }
+            else if(guess > randomNum) {
+                System.out.println("Your guess is Too High");
+            }
+            else {
+                System.out.printf("You have guessed right in %d attempts", attempts);
+                hasGuessedCorrectly = true;
+            }
+        }while(guess != randomNum && attempts < 5);
+
+        if(!hasGuessedCorrectly) {
+            System.out.println("You ran out of attempts. Better luck next time");
+            System.out.printf("The correct number is %d", randomNum);
+        }
+
+        scanner.close();
+    }
+}
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        //number guessing game - for loop with attempts
 
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
