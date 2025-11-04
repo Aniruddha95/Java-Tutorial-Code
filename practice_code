@@ -1502,3 +1502,86 @@ public class Main {
     }
 }
 
+import java.util.Scanner;
+
+public class Main {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args){
+
+        // Banking Program
+
+        // steps :
+        // declare Variables
+        // display Menu
+        // get and process users choice
+        // showBalance()
+        // deposit()
+        // withdraw()
+        // exit message
+
+        double balance = 0;
+        boolean isRunning = true;
+        int choice;
+
+        while(isRunning){
+            System.out.println("Welcome to SBI");
+            System.out.println("1. Balance");
+            System.out.println("2. Deposit");
+            System.out.println("3. Withdraw");
+            System.out.println("4. Exit");
+
+            System.out.print("Enter your choice (1-4) : ");
+            choice = scanner.nextInt();
+
+            switch(choice){
+                case 1 -> showBalance(balance);
+                case 2 -> balance = balance + deposit();
+                case 3 -> balance = balance - withdraw(balance);
+                case 4 -> isRunning = false;
+                default -> System.out.println("Invalid choice, please try again");
+            }
+            System.out.println();
+        }
+        System.out.println("Thank you for banking with us");
+        scanner.close();
+    }
+    static void showBalance(double balance){
+        System.out.printf("$%.2f\n", balance);
+    }
+    static double deposit(){
+        double amount;
+
+        System.out.print("Enter amount to deposit : $");
+        amount = scanner.nextDouble();
+
+        if(amount < 0){
+            System.out.println("Amount cannot be negative");
+            return 0;
+        }
+        else{
+            System.out.printf("Successfully deposited $%.2f", amount);
+            return amount;
+        }
+    }
+    static double withdraw(double balance){
+        double amount;
+
+        System.out.print("Enter amount to be withdrawn : $");
+        amount = scanner.nextDouble();
+
+        if(amount > balance){
+            System.out.println("Insufficient Balance");
+            return 0;
+        }
+        else if(amount < 0){
+            System.out.println("Amount cannot be negative");
+            return 0;
+        }
+        else{
+            System.out.printf("Successfully withdrawn $%.2f", amount);
+            return amount;
+        }
+    }
+}
