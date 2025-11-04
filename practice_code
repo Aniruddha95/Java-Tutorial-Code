@@ -1354,3 +1354,93 @@ public class Main {
         scanner.close();
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+
+        birthday();
+        birthday();
+        birthday();
+    }
+
+    static void birthday() {
+
+        System.out.println("Happy Birthday to you");
+        System.out.println("Happy Birthday to you");
+        System.out.println("Happy Birthday dear x");
+        System.out.println("Happy Birthday to you\n");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        String name = "Aniruddha";
+        int age = 30;
+
+        hello(name, age);
+        hello("Brocode", 35);
+    }
+
+    static void hello(String name, int age) {
+
+        System.out.printf("Hello %s\n",name);
+        System.out.printf("You are %d years old\n", age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        double z = square(3);
+
+        System.out.println(z);
+        System.out.println(square(5));
+
+        System.out.println(cube(4));
+
+        String fullName = getFullName("Aniruddha", "Thakare");
+        System.out.println(fullName);
+    }
+    static double square(double x) {
+
+        //int result = x*x; (local variable result is redundant)
+        //return result;
+
+        return x*x;
+    }
+    static double cube(double y) {
+
+        return Math.pow(y,3);
+    }
+    static String getFullName(String firstName, String lastName) {
+
+        return firstName+" "+lastName;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        int age = 21;
+
+        if(ageCheck(age)){
+            System.out.println("You may signup");
+        }
+        else{
+            System.out.println("You must be 18+ to signup");
+        }
+    }
+    static boolean ageCheck(int age) {
+        if(age >= 18){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+        //or return age >= 18;
+    }
+}
+
+
