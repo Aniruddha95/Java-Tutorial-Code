@@ -1627,3 +1627,99 @@ public class Main {
         scanner.close();
     }
 }
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args){
+
+        String[] fruits = {"apple", "banana", "orange"};
+
+        System.out.println(fruits[0]);
+
+        fruits[0] = "pineapple";
+        System.out.println(fruits[0]);
+
+        int numOfFruits = fruits.length;
+        System.out.println(numOfFruits);
+
+        for(int i=0; i<fruits.length; i++){
+            System.out.print(fruits[i]+" ");
+        }
+        System.out.println();
+        Arrays.sort(fruits); //method to sort array alphabetically
+
+        for(String fruit : fruits){
+            System.out.print(fruit+" ");
+        }
+        System.out.println();
+        Arrays.fill(fruits, "blueberry"); //method to fill each item in array with single item
+
+        for(String fruit : fruits){
+            System.out.print(fruit+" ");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        String[] cars = new String[3]; //defining empty array
+
+        cars[0] = "Honda";
+        cars[1] = "BMW";
+        cars[2] = "Skoda";
+
+        for(String car : cars){
+            System.out.print(car+" ");
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String[] foods = new String[3];
+
+        for(int i=0; i<foods.length; i++){
+            System.out.print("Enter a food : ");
+            foods[i] = scanner.nextLine();
+        }
+
+        for(String food : foods){
+            System.out.println(food);
+        }
+        scanner.close();
+    }
+}
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String[] foods;
+        int size;
+
+        System.out.print("Enter number of foods : ");
+        size = scanner.nextInt();
+        scanner.nextLine();
+
+        foods = new String[size];
+
+        for(int i=0; i<foods.length; i++){
+            System.out.print("Enter a food : ");
+            foods[i] = scanner.nextLine();
+        }
+
+        for(String food : foods){
+            System.out.println(food);
+        }
+        scanner.close();
+    }
+}
