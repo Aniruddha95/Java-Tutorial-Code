@@ -1912,3 +1912,75 @@ public class Main {
         scanner.close();
     }
 }
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        //Rock, Paper, Scissors Game
+
+        // Steps :
+        // declare variables
+        // declare string array for computer choice
+        // user input for move
+        // random computer choice
+        // switch cases for win, lose or draw
+        // while loop for continuation
+
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        String userChoice;
+        String compChoice;
+        String playAgain = "yes";
+        String[] choice = {"rock", "paper", "scissors"};
+
+        while (playAgain.equals("yes")) {
+            System.out.print("Enter your move : ");
+            userChoice = scanner.nextLine();
+
+            int randomIndex = random.nextInt(choice.length);
+            compChoice = choice[randomIndex];
+            System.out.println("Computer choice : "+compChoice);
+
+            switch (userChoice) {
+                case "rock" -> {
+                    if (compChoice.equals("scissors")) {
+                        System.out.println("You Win!");
+                    } else if (compChoice.equals("paper")) {
+                        System.out.println("You Lose!");
+                    } else {
+                        System.out.println("Draw!");
+                    }
+                }
+                case "paper" -> {
+                    if (compChoice.equals("rock")) {
+                        System.out.println("You Win!");
+                    } else if (compChoice.equals("scissors")) {
+                        System.out.println("You Lose!");
+                    } else {
+                        System.out.println("Draw!");
+                    }
+                }
+                case "scissors" -> {
+                    if (compChoice.equals("paper")) {
+                        System.out.println("You Win!");
+                    } else if (compChoice.equals("rock")) {
+                        System.out.println("You Lose!");
+                    } else {
+                        System.out.println("Draw!");
+                    }
+                }
+                default -> System.out.println("Invalid move! Please enter rock, paper, or scissors");
+            }
+            System.out.print("Play again (yes/no) : ");
+            playAgain = scanner.nextLine();
+        }
+        if(playAgain.equals("no")){
+            System.out.println("Thank you for playing!");
+        }
+        scanner.close();
+    }
+}
