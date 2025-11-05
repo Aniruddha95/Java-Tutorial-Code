@@ -1857,3 +1857,58 @@ public class Main {
         }
     }
 }
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Quiz Game
+
+        // steps :
+        // questions array[]
+        // options array[][]
+        // declare variables
+        // welcome message
+        // question (loop)
+        // options
+        // get guess from user
+        // check the guess
+        // display final score
+
+        String[] questions = {"1. Which planet is known as the “Red Planet”?", "2. Who wrote the national anthem of India?", "3. What is the largest ocean on Earth?", "4. Who invented the telephone?", "5. Which country is known as the “Land of the Rising Sun”?"};
+        String[][] options = {{"Venus", "Mars", "Jupiter", "Mercury"},
+                              {"Bankim Chandra Chatterjee", "Rabindranath Tagore", "Sarojini Naidu", "Subhas Chandra Bose"},
+                              {"Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"},
+                              {"Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Isaac Newton"},
+                              {"China", "Japan", "Thailand", "South Korea"}};
+
+        String[] answers = {"Mars", "Rabindranath Tagore", "Pacific Ocean", "Alexander Graham Bell", "Japan"};
+
+        int score = 0;
+        String guess;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Quiz Game");
+
+        for(int i=0; i<questions.length; i++){
+            System.out.println(questions[i]);
+
+            for(String option : options[i]){
+                System.out.println(option);
+            }
+            System.out.print("Enter your guess : ");
+            guess = scanner.nextLine();
+
+            if(answers[i].equals(guess)){
+                System.out.println("Right Answer");
+                score = score + 1;
+            }
+            else {
+                System.out.println("Wrong Answer");
+            }
+        }
+        System.out.println("Your total score is : "+score);
+        scanner.close();
+    }
+}
