@@ -2273,3 +2273,38 @@ public class Car {
         System.out.println("You drive the "+this.color+" "+this.model);
     }
 }
+
+//static
+//Main.java
+
+public class Main {
+    public static void main(String[] args) {
+
+        //static = makes a variable or method belong to the class rather than to any specific object
+        //commonly used for utility methods or shared resources
+
+        Friend friend1 = new Friend("Harry");
+        Friend friend2 = new Friend("Sam");
+        Friend friend3 = new Friend("Emma");
+
+        System.out.println(Friend.numOfFriends);
+        Friend.showFriends();
+    }
+}
+
+//Friend.java
+
+public class Friend {
+
+    static int numOfFriends;
+    String name;
+
+    Friend(String name) {
+        this.name = name;
+        numOfFriends++;
+    }
+
+    static void showFriends() {
+        System.out.println("You have "+numOfFriends+" friends");
+    }
+}
