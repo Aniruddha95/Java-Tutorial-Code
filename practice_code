@@ -226,19 +226,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //Domino's cart program
-
-        Scanner scanner = new Scanner(System.in);
-
-        scanner.close();
-    }
-}
-
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-
         String name;
         int age;
         boolean isStudent;
